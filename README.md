@@ -24,3 +24,20 @@ Deploy to OpenShift
 1. Install the Red Hat Cloud client tools ([docs](https://developers.openshift.com/managing-your-applications/client-tools.html)) and run `rhc setup`.
 1. Make a new app per the instructions in [OPENSHIFT.md](OPENSHIFT.md) with `rhc app create wordpress php-5.4 mysql-5.5 --from-code=https://github.com/openshift-quickstart/openshift-wordpress-developer-quickstart.git`
 1. Open your site in a browser and run the WordPress install. (This one was [http://wordpress-theopen.rhcloud.com/](http://wordpress-theopen.rhcloud.com/).)
+1. Make sure to remove `dist` from the theme's `.gitignore` file, because this project isn't currently set up for OpenShift to handle the Gulp tasks.
+1. Find the ridiculously long ssh link for your site and add a corresponding remote with `git remote add rhc ssh://57a76be62d52716f83000007@wordpress-theopen.rhcloud.com/~/git/wordpress.git`.
+1. Deploy your site with `git push rhc`. (The first time through, you may need to force it with `git push -f rhc`.)
+
+Plugins
+--------
+1. First install and activate these plugins:
+  1. Amazon Web Services -- required for WP Offload
+  1. WP Offload S3 Lite -- required for media storage on OpenShift
+  1. Autoptimize -- be sure to check these advanced settings
+    1. :white_check_mark: Optimize JavaScript Code
+    1. :x: Force JavaScript in < head >
+    1. :white_check_mark: Also aggregate inline JS
+    1. :white_check_mark: Optimize CSS Code
+    1. :white_check_mark: Also aggregate inline CSS
+  1. WP-Optimize -- cleans up your database
+  1. Yoast SEO -- proper SEO management
