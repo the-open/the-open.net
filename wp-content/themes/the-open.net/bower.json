@@ -1,8 +1,8 @@
 {
-  "name": "sage",
-  "homepage": "https://roots.io/sage/",
+  "name": "the-open.net",
+  "homepage": "http://www.the-open.net/",
   "authors": [
-    "Ben Word <ben@benword.com>"
+    "Ben Word <snook@the-open.net>"
   ],
   "license": "MIT",
   "private": true,

@@ -77,7 +77,7 @@ msgid "By"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Sage Starter Theme"
+msgid "the-open.net (based on Sage from roots.io)"
 msgstr ""
 
 #. Theme URI of the plugin/theme
